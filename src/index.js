@@ -36,7 +36,7 @@ class App extends Component {
 
     camera.position.z = 5;
 
-    function animate() {
+    const animate = () => {
       requestAnimationFrame(animate);
       controls.update()
 
@@ -89,5 +89,4 @@ class App extends Component {
   }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
