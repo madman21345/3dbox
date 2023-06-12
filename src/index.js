@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
     renderer.setSize(window.innerWidth, window.innerHeight);
     this.mount.appendChild(renderer.domElement);
 
-    //nice to be able to look around, adding camera control
+    //camera controls; nice to be able to look around
     const controls = new OrbitControls( camera, renderer.domElement );
     controls.update();
 
@@ -53,6 +54,10 @@ class App extends Component {
     //axes
     const axesHelper = new THREE.AxesHelper(2)
     scene.add(axesHelper)
+
+    //transform controls
+    const controls = new OrbitControls( camera, renderer.domElement );
+    controls.update();
 
     
     const conf = {color: '#88ddff', radians: true, x: 0, y: 0, z: 0, altcam: false};
