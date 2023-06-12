@@ -29,7 +29,76 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="app-container">
+        <main>
+          <canvas id="canvas" ></canvas>
+          <!-- <div class="jsoneditor-container">
+            <div id="jsoneditor" class="jsoneditor"></div>
+          </div> -->
+      
+          <div id="targetgui" class="targetgui"></div>
+      
+          <div id="armgui" class="armgui"></div>
+        </main>
+  
+        <div class="toolbar">
+          <button
+          class="flex-left button mat-icon material-icons mat-icon-no-color"
+          title="download"
+          id="download"
+        >
+          download
+        </button>
+          <button
+            class="flex-left button mat-icon material-icons mat-icon-no-color"
+            title="Remove selected keyframe"
+            id="removeKeyFrame"
+          >
+            close
+          </button>
+          <button
+            id="addKeyFrame"
+            class="flex-left button mat-icon material-icons mat-icon-no-color"
+            title="Add new track with the keyframe"
+          >
+            add
+          </button>
+          <div style="width: 1px; background: gray; height: 100%"></div>
+          <button
+            class="button mat-icon material-icons mat-icon-no-color"
+            title="Use external player to play\stop the timeline. For the demo simple setInterval is used."
+            id="onPlayClick"
+          >
+            play_arrow
+          </button>
+          <button
+            class="button mat-icon material-icons mat-icon-no-color"
+            title="Use external player to play\stop the timeline. For the demo simple setInterval is used."
+            id="onPauseClick"
+          >
+            pause
+          </button>
+          <div style="flex: 1"></div>
+         
+        </div>
+  
+        <footer>
+          <div class="outline">
+            <div class="outline-header" id="outline-header"></div>
+            <div
+              class="outline-scroll-container"
+              id="outline-scroll-container"
+              onwheel="outlineMouseWheel(arguments[0])"
+            >
+              <div class="outline-items" id="outline-container"></div>
+            </div>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </footer>
+      </div>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

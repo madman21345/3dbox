@@ -56,8 +56,10 @@ class App extends Component {
     scene.add(axesHelper)
 
     //transform controls
-    const controls = new OrbitControls( camera, renderer.domElement );
-    controls.update();
+    const tfControl = new TransformControls( camera, renderer.domElement );
+    tfControl.attach(cube);
+    //tfControl.attach(camera2);
+    scene.add(tfControl);
 
     
     const conf = {color: '#88ddff', radians: true, x: 0, y: 0, z: 0, altcam: false};
@@ -96,13 +98,13 @@ class App extends Component {
     cubeFolder.open();
 
     //idk doesnt work
-    altcamera.add(camera2, 'fov', 30, 145);
+    altcamera.add(camera2, 'fov', 30, 145).listen();
     altcamera.add(conf, 'altcam');
 
     const cPos = altcamera.addFolder('Position');
-    cPos.add(camera2.position, 'x', -5, 5);
-    cPos.add(camera2.position, 'y', -5, 5);
-    cPos.add(camera2.position, 'z', -5, 5);
+    cPos.add(camera2.position, 'x', -5, 5).listen();
+    cPos.add(camera2.position, 'y', -5, 5).listen();
+    cPos.add(camera2.position, 'z', -5, 5).listen();
 
 
     
